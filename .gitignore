@@ -1,0 +1,16 @@
+# Temporary files used by some editors
+*.swp
+*~
+
+# Temporary files created during Python file loading
+*.pyc
+**/__pycache__/
+
+# Project storage of some editors
+/.idea
+/.project
+/.settings
+/.vscode
+
+# Database created by this library
+*.db
