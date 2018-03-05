@@ -78,6 +78,7 @@ class IPFSDB():
     def add_file(self, path, tags=[]):
         hash = self.ipfs.add(str(path))
         self.add_hash(hash['Name'], hash['Hash'], tags)
+        return hash['Hash']
 
     #def get_tag_id(self, tag):
     #    c_ex = c.execute("select id from tags where tag_name=?",(str(tag),))
