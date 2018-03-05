@@ -79,6 +79,11 @@ class IPFSDB():
         hash = self.ipfs.add(str(path))
         self.add_hash(hash['Name'], hash['Hash'], tags)
         return hash['Hash']
+    def list_all_files(self):
+        c_ex = self.c.execute("select * from files")
+        files_fetch = c_ex.fetchall()
+        return files_fetch
+            
 
     #def get_tag_id(self, tag):
     #    c_ex = c.execute("select id from tags where tag_name=?",(str(tag),))
@@ -114,4 +119,5 @@ if __name__ == "__main__":
         else:
             filename = args[0]
             args.pop(0)
-            db.add_file(filename, args) 
+            db.add_file(filename, args)
+
